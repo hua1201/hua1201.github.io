@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* { margin:0; padding:0; }
+div { width:100px; height:100px; background:#ccc; position:absolute; top:0; left:100px; }
+.div1 { background:red; left:100px; top:100px; }
+.div2 { background:green; top:150px; left:300px; }
+p{
+			text-align:center;
+		}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script src="drag.js"></script>
+<script>
+$(function (){
+	$('.drag').drag();
+});
+</script>
+</head>
+
+<body>
+	
+	<div class="drag div1"></div>
+	
+	<div class="drag div2"></div>
+    <p>鼠标拖动图片查看效果<a href="index.html">返回主页</a></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hua1201.github.io</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 400px;
+            top:200px;
+
+            transform-style: preserve-3d;
+            transform:perspective(800px) rotateY(-60deg) rotateX(30deg);
+         }
+         .box div{
+             width: 100%;
+             height: 100%;
+             position: absolute;
+             top: 0;
+             left: 0;
+             opacity: 0.8;
+			 font-size:40px;
+			 text-align:center;
+			 line-height:200px;
+			 color:#fff;
+         }
+         .front{
+             background: #ff42d0;
+           transform: translateZ(100px);
+        }
+        .back{
+            background: #ff4075;
+            transform: translateZ(-100px);
+        }
+        .left{
+            background: #ffb213;
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        .right{
+            background: #ffe249;
+            transform: translateX(100px) rotateY(90deg);
+        }
+        .top{
+            background: #75cc68;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        .bottom{
+            background: #172ccc;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+		p{
+			text-align:center;
+		}
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById('div1');
+
+            var x=0;
+            var y=0;
+
+            oDiv.onmousedown=function(ev){
+                var oEvent=ev || event;
+                var disX=oEvent.clientX-x;
+                var disY=oEvent.clientY-y;
+
+                document.onmousemove=function(ev){
+                    var oEvent=ev || event;
+
+                    x=oEvent.clientX-disX;
+                    y=oEvent.clientY-disY;
+
+                    oDiv.style.transform='perspective(800px) rotateY('+x+'deg) rotateX('+(-y)+'deg)';
+                };
+
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+<div class="box" id="div1">
+    <div class="front">前</div>
+    <div class="back">后</div>
+    <div class="left">左</div>
+    <div class="right">右</div>
+    <div class="top">上</div>
+    <div class="bottom">下</div>
+</div>
+ <p>左右拖拽页面查看效果   <a href="index.html">返回主页</a></p>
+</body>
+</html>

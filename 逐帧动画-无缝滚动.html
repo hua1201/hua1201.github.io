@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社—http://www.zhinengshe.com</title>
+    <style>
+        @keyframes move {
+            to{
+                left:-510px;
+            }
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width:510px;
+            height:170px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .box ul{
+            width:1020px;
+            position: absolute;
+            left:0;
+            top:0;
+
+            animation: 2s move linear infinite;
+            animation-delay: 2s;
+        }
+        .box ul li{
+            width:150px;
+            height:150px;
+            padding: 10px;
+            float: left;
+        }
+        .box ul li img{
+            display: block;
+            width:100%;
+            height:100%;
+        }
+        .box ul:hover{
+            animation-play-state: paused;
+        }
+		p{
+			text-align:center;
+		}
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+        </ul>
+    </div>
+    <p>2秒后自动播放<a href="index.html">返回主页</a></p>
+</body>
+</html>
+
+
+
+
